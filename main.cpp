@@ -1,7 +1,11 @@
 #include <QApplication>
+
 #include <VPApplication>
 
 #include <QQmlApplicationEngine>
+#include <QtQml>
+
+#include "share.h"
 
 
 int main(int argc, char *argv[])
@@ -16,6 +20,10 @@ int main(int argc, char *argv[])
     // if you have older projects using Qt App wizards from previous QtCreator versions than 3.1, please change them to QQmlApplicationEngine
     QQmlApplicationEngine engine;
     vplay.initialize(&engine);
+
+    // add the share object instance to context
+    Share share;
+    engine.rootContext()->setContextProperty("shareIntent", &share);
 
     // use this during development
     // for PUBLISHING, use the entry point below

@@ -25,8 +25,13 @@ RESOURCES += #    resources.qrc # uncomment for publishing
 SOURCES += main.cpp
 
 android {
+    QT += androidextras
+    SOURCES += share.cpp
+    HEADERS += share.h
+
     ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
     OTHER_FILES += android/AndroidManifest.xml
+
 }
 
 ios {

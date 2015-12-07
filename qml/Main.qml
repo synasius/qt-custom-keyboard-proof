@@ -17,6 +17,11 @@ App {
             Image {
                 source: "../assets/vplay-logo.png"
                 anchors.centerIn: parent
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: shareIntent.share("Foo", "Foo subject", "Hello World!")
+                }
             }
         }
 
